@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "fullauthrfidcore",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Darkzwer/FullAuthRFIDCore",
+      "state" : {
+        "branch" : "main",
+        "revision" : "9c307627f2a7b7eb8eb5a38b34389e0b62241583"
+      }
+    },
+    {
       "identity" : "fullcore",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Darkzwer/FullCore",

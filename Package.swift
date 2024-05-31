@@ -4,17 +4,25 @@
 import PackageDescription
 
 let package = Package(
-    name: "Full",
+    name: "Barcode",
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "Full",
             targets: ["Full"]),
+        //.library(
+        //    name: "Barcode",
+        //    targets: ["Barcode"]),
+        .library(
+            name: "FullAuthRFID",
+            targets: ["FullAuthRFID"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
-        .package(url: "https://github.com/Darkzwer/FullCore", branch: "main")
+        .package(url: "https://github.com/Darkzwer/FullCore", branch: "main"),
+        //.package(url: "https://github.com/Darkzwer/BarcodeCore", branch: "main"),
+        .package(url: "https://github.com/Darkzwer/FullAuthRFIDCore", branch: "main"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -22,8 +30,14 @@ let package = Package(
         .target(
             name: "Full",
             dependencies: ["FullCore"]),
-        .testTarget(
-            name: "FullTests",
-            dependencies: ["Full"]),
+        //.target(
+        //    name: "Barcode",
+        //    dependencies: ["BarcodeCore"]),
+        .target(
+            name: "FullAuthRFID",
+            dependencies: ["FullAuthRFIDCore"]),
+        //.testTarget(
+        //    name: "FullTests",
+        //    dependencies: ["Full"]),
     ]
 )
