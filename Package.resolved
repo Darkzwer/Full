@@ -1,23 +1,16 @@
 {
-  "pins" : [
-    {
-      "identity" : "fullauthrfidcore",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Darkzwer/FullAuthRFIDCore",
-      "state" : {
-        "branch" : "main",
-        "revision" : "9c307627f2a7b7eb8eb5a38b34389e0b62241583"
+  "object": {
+    "pins": [
+      {
+        "package": "FullCore",
+        "repositoryURL": "https://github.com/Darkzwer/FullCore.git",
+        "state": {
+          "branch": null,
+          "revision": "6da0b49664953c52a0bb3f34a1eec054a1be1302",
+          "version": "7.2.9102"
+        }
       }
-    },
-    {
-      "identity" : "fullcore",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Darkzwer/FullCore",
-      "state" : {
-        "branch" : "main",
-        "revision" : "6da0b49664953c52a0bb3f34a1eec054a1be1302"
-      }
-    }
-  ],
-  "version" : 2
+    ]
+  },
+  "version": 1
 }

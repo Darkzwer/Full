@@ -1,43 +1,25 @@
-// swift-tools-version: 5.8
+// swift-tools-version: 5.5
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
+//BinaryWithDep
 import PackageDescription
 
 let package = Package(
-    name: "Barcode",
+    name: "Full",
     products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
-        .library(
-            name: "Full",
-            targets: ["Full"]),
-        //.library(
-        //    name: "Barcode",
-        //    targets: ["Barcode"]),
-        .library(
-            name: "FullAuthRFID",
-            targets: ["FullAuthRFID"]),
+        .library(name: "Full", targets: ["Full", "DocumentReaderTarget"]),
     ],
     dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
-        .package(url: "https://github.com/Darkzwer/FullCore", branch: "main"),
-        //.package(url: "https://github.com/Darkzwer/BarcodeCore", branch: "main"),
-        .package(url: "https://github.com/Darkzwer/FullAuthRFIDCore", branch: "main"),
+        .package(url: "https://github.com/Darkzwer/FullCore.git", .exact("7.2.9102")),
     ],
     targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages this package depends on.
-        .target(
-            name: "Full",
-            dependencies: ["FullCore"]),
-        //.target(
-        //    name: "Barcode",
-        //    dependencies: ["BarcodeCore"]),
-        .target(
-            name: "FullAuthRFID",
-            dependencies: ["FullAuthRFIDCore"]),
-        //.testTarget(
-        //    name: "FullTests",
-        //    dependencies: ["Full"]),
+        .target(name: "Full", dependencies: ["FullCore"]),
+        .binaryTarget(
+                    name: "DocumentReaderTarget",
+                    url: "https://pods.regulaforensics.com/DocumentReader/7.2.3545/DocumentReader-7.2.3545.zip",
+                    checksum: "833b43dba07afceed74e14e8cd6c4c5fb41055da987164ee047f195f4577ab6d"),
+        .testTarget(
+            name: "FullTests",
+            dependencies: ["Full"]),
     ]
 )
