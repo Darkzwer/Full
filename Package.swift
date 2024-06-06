@@ -10,7 +10,7 @@ let package = Package(
         .library(name: "DocumentReaderSDK", targets: ["DocumentReaderTarget", "Full"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/Darkzwer/CommonDepSwift.git", from: "7.2.0"),
+        .package(url: "https://github.com/Darkzwer/CommonDepSwift.git", .exactItem("7.1.379")),
     ],
     targets: [
         .target(name: "Full", dependencies: [
@@ -18,8 +18,8 @@ let package = Package(
         ]),
         .binaryTarget(
             name: "DocumentReaderTarget",
-            url: "https://pods.regulaforensics.com/DocumentReader/7.2.3545/DocumentReader-7.2.3545.zip",
-            checksum: "833b43dba07afceed74e14e8cd6c4c5fb41055da987164ee047f195f4577ab6d"),
+            url: "https://pods.regulaforensics.com/DocumentReader/7.1.3379/DocumentReader-7.1.3379.zip",
+            checksum: "24f3ab840a064180a0e72ad3e22bd260e2595ecd8a4ec20b2e32b01965a9f976"),
         .testTarget(
             name: "FullTests",
             dependencies: ["Full"]),
