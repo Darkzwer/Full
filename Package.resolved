@@ -2,12 +2,12 @@
   "object": {
     "pins": [
       {
-        "package": "Starscream",
-        "repositoryURL": "https://github.com/daltoniam/Starscream.git",
+        "package": "RegulaCommonSwift",
+        "repositoryURL": "https://github.com/Darkzwer/CommonDepSwift.git",
         "state": {
           "branch": null,
-          "revision": "a063fda2b8145a231953c20e7a646be254365396",
-          "version": "3.1.2"
+          "revision": "433d38ae42e11e037bd8bcf7c26889b73c064326",
+          "version": "7.2.487"
         }
       }
     ]

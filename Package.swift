@@ -5,17 +5,17 @@
 import PackageDescription
 
 let package = Package(
-    name: "Full",
+    name: "DocumentReaderSDK",
     products: [
-        .library(name: "Full", targets: ["Full", "DocumentReaderTarget"]),
+        .library(name: "DocumentReaderSDK", targets: ["DocumentReaderTarget", "Full"]),
     ],
     dependencies: [
-        //.package(url: "https://github.com/Darkzwer/FullCore.git", .exact("7.3")),
-        //.package(url: "https://github.com/Darkzwer/FullCore.git", from: ("7.3"))
-        .package(url: "https://github.com/daltoniam/Starscream.git", from: "3.1.1")
+        .package(url: "https://github.com/Darkzwer/CommonDepSwift.git", from: "7.2.0"),
     ],
     targets: [
-        .target(name: "Full", dependencies: ["Starscream"], path: "Sources"),
+        .target(name: "Full", dependencies: [
+            .product(name: "RegulaCommonSwift", package: "CommonDepSwift")
+        ]),
         .binaryTarget(
                     name: "DocumentReaderTarget",
                     url: "https://pods.regulaforensics.com/DocumentReader/7.2.3545/DocumentReader-7.2.3545.zip",
